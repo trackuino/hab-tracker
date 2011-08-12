@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen
+  xmlns:android="http://schemas.android.com/apk/res/android">
+	  
+	<PreferenceCategory android:title="@string/pref_cat_aprs">
+		<!-- TODO: everything here needs default values  -->
+
+		<EditTextPreference
+			android:key="callsign"
+			android:title="@string/pref_title_callsign"
+			android:inputType="textCapCharacters" 
+			android:defaultValue="MYCALL-11" />
+
+		<CheckBoxPreference
+			android:key="simulation"
+            android:title="@string/pref_title_simulation"
+            android:summary="@string/pref_summary_simulation" />
+		
+		<EditTextPreference
+			android:key="aprslog_server"
+			android:title="@string/pref_title_aprslog_server"
+			android:defaultValue="aprs.trackuino.org:8000" />
+			
+		<Preference
+			android:key="clean_database"
+			android:title="@string/pref_title_clean_database"
+			android:summary="@string/pref_summary_clean_database" />
+
+    </PreferenceCategory>
+    
+    <PreferenceCategory android:title="@string/pref_cat_flight">
+
+    	<ListPreference
+    		android:key="units"
+    		android:title="@string/pref_title_units" 
+    		android:entries="@array/pref_units" 
+    		android:entryValues="@array/pref_unit_values" 
+    		android:defaultValue="m" />
+    		
+    	<EditTextPreference
+    		android:key="ascent_rate"
+    		android:title="@string/pref_title_ascent_rate"
+    		android:inputType="number" 
+    		android:numeric="decimal" 
+    		android:defaultValue="350" />
+
+    	<EditTextPreference
+    		android:key="descent_rate"
+    		android:title="@string/pref_title_descent_rate" 
+    		android:inputType="number"
+    		android:numeric="decimal" 
+    		android:defaultValue="250" />
+
+		<EditTextPreference
+			android:key="burst_altitude"
+			android:title="@string/pref_title_burst_altitude" 
+			android:inputType="number"
+			android:numeric="decimal"
+			android:defaultValue="30000" />
+			
+		<EditTextPreference
+			android:key="launch_altitude"
+			android:title="@string/pref_title_launch_altitude"
+			android:inputType="number"
+			android:numeric="decimal"
+			android:defaultValue="0" />
+    		
+    </PreferenceCategory>
+    
+    <PreferenceCategory android:title="@string/pref_cat_other">
+   		<Preference
+			android:key="reset_defaults"
+			android:title="@string/pref_title_reset_defaults" 
+			android:summary="This doesn't do anything yet"/>
+    
+    </PreferenceCategory>
+</PreferenceScreen>

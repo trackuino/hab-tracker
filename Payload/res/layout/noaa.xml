@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+	android:orientation="vertical"
+	android:layout_width="fill_parent"
+	android:layout_height="wrap_content">
+	
+	<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	    android:orientation="vertical"
+	    android:layout_width="fill_parent"
+	    android:layout_height="wrap_content">
+	
+	    <Spinner 
+	        android:id="@+id/spinner_noaa_model"
+	        android:layout_width="fill_parent"
+	        android:layout_height="wrap_content"
+	        android:drawSelectorOnTop="true"
+	        android:layout_marginBottom="10dip"
+	    />
+	
+	    <Spinner 
+	        android:id="@+id/spinner_noaa_forecast_cycle"
+	        android:layout_width="fill_parent"
+	        android:layout_height="wrap_content"
+	        android:drawSelectorOnTop="true"
+	        android:layout_marginBottom="10dip"
+	    />
+	    
+	    <Spinner
+	    	android:id="@+id/spinner_noaa_launch_time"
+	        android:layout_width="fill_parent"
+	        android:layout_height="wrap_content"
+	        android:drawSelectorOnTop="true"
+	        android:layout_marginBottom="10dip"
+	    />
+	    
+	    <TextView 
+	    	android:text="@string/text_noaa_captcha" 
+	    	android:id="@+id/text_noaa_captcha" 
+	    	android:layout_width="wrap_content" 
+	    	android:layout_height="wrap_content"
+	    />
+	    	
+	    <ImageView 
+	    	android:id="@+id/image_noaa_captcha" 
+	    	android:layout_width="wrap_content" 
+	    	android:layout_height="wrap_content"
+	    />
+	    
+	    <EditText 
+	    	android:id="@+id/edit_noaa_captcha" 
+	    	android:layout_width="fill_parent"
+	    	android:layout_height="wrap_content"
+	    	android:imeOptions="actionGo"
+	    	android:singleLine="true" 
+	   	/>
+	
+		<TextView 
+			android:id="@+id/text_noaa_debug"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:text="Debug"
+		/>
+	</LinearLayout>
+</ScrollView>

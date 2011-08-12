@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="pref_units">
+    	<item>Metric</item>
+    </string-array>
+    
+    <!-- Not translated -->
+	<string-array name="pref_unit_values">
+		<item>m</item>
+	</string-array>
+  
+</resources>

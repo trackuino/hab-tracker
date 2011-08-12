@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+  xmlns:android="http://schemas.android.com/apk/res/android">
+  	<item android:title="@string/menu_get_sounding_winds" android:id="@+id/get_sounding_winds"></item>
+    <item android:title="@string/menu_predict_from_here" android:id="@+id/predict_from_here"></item>
+    <item android:title="@string/menu_navigate_here" android:id="@+id/navigate_here"></item>
+    <item android:title="@string/menu_google_map_this" android:id="@+id/google_map_this"></item>
+</menu>

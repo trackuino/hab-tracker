@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+  xmlns:android="http://schemas.android.com/apk/res/android">
+<item android:id="@+id/settings" android:icon="@drawable/ic_menu_settings" android:title="@string/menu_settings"></item>
+<item android:id="@+id/monitor" android:title="@string/menu_monitor"></item>
+<item android:id="@+id/navigate_to_landing" android:title="@string/menu_navigate_to_landing"></item>
+<item android:id="@+id/more" android:icon="@drawable/ic_menu_more" android:title="@string/menu_more"></item>
+
+
+</menu>
