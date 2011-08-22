@@ -10,8 +10,12 @@ import android.database.Cursor;
 import android.net.Uri;
 
 public class Aprs {
+	// TNC2 packet format
 	private final static String HEADER = "(.+?):";
-	private final static String BEGIN = "(/";
+	private final static String DATA = "(.*)";
+	
+	// APRS format (trackuino specific)
+	private final static String BEGIN = "/";
 	private final static String TIME = "(\\d+?)h";
 	private final static String LAT = "(\\d{4}\\.\\d{2})([NS])";
 	private final static String TABLE = "([/\\\\])";
@@ -21,12 +25,14 @@ public class Aprs {
 	private final static String CSSEP = "(/)";
 	private final static String SPEED = "(\\d\\d\\d)";
 	private final static String COMMENT = "(.*/A=(\\d+).*)";
-	private final static String END = ")";
 	private final static int SECONDS_IN_A_DAY = 24 * 60 * 60;
 	
-	private static final Pattern RE = Pattern.compile(
-			HEADER + BEGIN + TIME + LAT + TABLE + LON + SYM +
-			COURSE + CSSEP + SPEED + COMMENT + END);
+	private static final Pattern REPACKET = Pattern.compile(
+			HEADER + DATA);
+	
+	private static final Pattern REAPRS = Pattern.compile(
+			BEGIN + TIME + LAT + TABLE + LON + SYM +
+			COURSE + CSSEP + SPEED + COMMENT);
 	
 	public enum Tag {
 		OK,
@@ -94,20 +100,26 @@ public class Aprs {
 		}
 		
 		public void decode(String line) {
-			Matcher m = RE.matcher(line);
+			Matcher m = REPACKET.matcher(line);
 			if (m.matches()) {
+				// Store the packet's header/data
 				mHeader = m.group(1);
 				mData = m.group(2);
-				mTime = decode_time(m.group(3));
-				mLat = decode_lat(m.group(4), m.group(5));
-				mTable = m.group(6);
-				mLon = decode_lon(m.group(7), m.group(8));
-				mSym = m.group(9);
-				mCourse = Integer.parseInt(m.group(10));
-				mCsSep = m.group(11);
-				mSpeed = decode_speed(m.group(12));
-				mComment = m.group(13);
-				mAltitude = decode_altitude(m.group(14));
+				
+				// See if it looks like APRS and decode it
+				m = REAPRS.matcher(mData);
+				if (m.matches()) {
+					mTime = decode_time(m.group(1));
+					mLat = decode_lat(m.group(2), m.group(3));
+					mTable = m.group(4);
+					mLon = decode_lon(m.group(5), m.group(6));
+					mSym = m.group(7);
+					mCourse = Integer.parseInt(m.group(8));
+					mCsSep = m.group(9);
+					mSpeed = decode_speed(m.group(10));
+					mComment = m.group(11);
+					mAltitude = decode_altitude(m.group(12));
+				}
 			}
 		}
 		

@@ -4,9 +4,29 @@
     	<item>Metric</item>
     </string-array>
     
+	<array name="pref_pollintervals">
+		<item>2 seconds</item>
+		<item>10 seconds</item>
+		<item>30 seconds</item>
+		<item>1 minute</item>
+		<item>5 minutes</item>
+		<item>15 minutes</item>
+		<item>1 hour</item>
+	</array>		
+  
     <!-- Not translated -->
 	<string-array name="pref_unit_values">
 		<item>m</item>
 	</string-array>
-  
+	
+	<string-array name="pref_pollinterval_values">
+		<item>2</item>
+		<item>10</item>
+		<item>30</item>
+		<item>60</item>
+		<item>300</item>
+		<item>900</item>
+		<item>3600</item>
+	</string-array>
+	
 </resources>

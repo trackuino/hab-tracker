@@ -5,18 +5,25 @@
 
     <!-- Menu labels -->
     <string name="menu_settings">Configuración</string>
-    <string name="menu_monitor">Monitor</string>
+    <string name="menu_monitor">Monitor de Packet</string>
+    <string name="menu_navigate_to_landing">Indicaciones al aterrizaje</string>
+	<string name="menu_pan_to_balloon">Centrar en globo</string>
+	<string name="menu_flight_panel">Panel de vuelo</string>
     <string name="menu_more">Más...</string>
 
 	<!-- Preference items -->
     <string name="pref_cat_aprs">APRS</string>
-    <string name="pref_title_simulation">Simulación</string>
-    <string name="pref_summary_simulation">Reproduce un vuelo anterior</string>
+    <string name="pref_title_connect">Conectar</string>
+    <string name="pref_summary_connect">Obtiene datos de la red APRS</string>
     <string name="pref_title_callsign">Indicativo</string>
     <string name="pref_title_aprslog_server">Servidor APRS-Log</string>
     <string name="pref_summary_callsign">Indicativo-SSID a rastrear</string>
     <string name="pref_title_clean_database">Nuevo vuelo</string>
     <string name="pref_summary_clean_database">Borra el historial</string>
+    <string name="pref_title_launch_time">Fecha/hora de lanzamiento</string>
+	<string name="pref_summary_launch_time">Monitoriza sólo paquetes posteriores a esta fecha</string>
+    <string name="pref_title_poll_interval">Intervalo conexiones APRS</string>
+    
     <string name="pref_cat_flight">Datos del vuelo</string>
     <string name="pref_title_units">Unidades</string>
     <string name="pref_title_ascent_rate">Velocidad ascenso</string>
@@ -40,10 +47,14 @@
 	<string name="menu_predict_from_here">Predicción desde aquí</string>
 	<string name="menu_navigate_here">Indicaciones hasta aquí</string>
 	<string name="menu_google_map_this">Mapa de Google</string>
-	<string name="menu_navigate_to_landing">Indicaciones al aterrizaje</string>
+	
 	<string name="text_noaa_model">-- Modelo de predicción</string>
 	<string name="text_noaa_forecast_cycle">-- Ciclo de predicción</string>
 	<string name="text_noaa_launch_time">-- Hora de lanzamiento</string>
 	<string name="text_noaa_captcha">Resuelve el test de Turing</string>
+
+	<!--  Notification messages -->
+	<string name="notification_running">Payload conectado</string>
+	<string name="notificacion_configure">Toca aquí para configurar</string>
 	
 </resources>

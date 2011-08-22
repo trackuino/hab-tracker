@@ -261,7 +261,6 @@ public class TheMapActivity extends MapActivity
 		//public void onServiceConnected(ComponentName className, IBinder service) {
 		public void onServiceConnected(ComponentName className, IBinder service) {
 			aprsServiceBinder = (AprsServiceBinder) service;
-			prediction = aprsServiceBinder.getPrediction();
 			
 			// TODO: unregister the observer on pause/stop and re-register on resume/start?
 			aprsServiceBinder.registerObserver(TheMapActivity.this);
@@ -279,27 +278,13 @@ public class TheMapActivity extends MapActivity
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		
+
+		// Create a new prediction or get the existing one
+		prediction = Prediction.getInstance();
+
 		// Load the default settings from the xml. By setting the last parameter to false,
 		// it will read it only once, so that user defined params won't be overwritten.
 		PreferenceManager.setDefaultValues(this, R.xml.settings, false);
-		
-		// Read settings
-		mSettings =	PreferenceManager.getDefaultSharedPreferences(getApplicationContext());  
-		float burstAltitude = Float.parseFloat(mSettings.getString("burst_altitude", null));
-		float ascentRate = Float.parseFloat(mSettings.getString("ascent_rate", null));
-		float descentRate = Float.parseFloat(mSettings.getString("descent_rate", null));
-		float launchAltitude = Float.parseFloat(mSettings.getString("launch_altitude", null));
-		
-		// Create a new prediction or get the existing one
-		prediction = Prediction.getInstance();
-		
-		// Set initial prediction data 
-		prediction.reloadSoundingWinds(getContentResolver());
-		prediction.setBurstAltitude(burstAltitude);
-		prediction.setAscentRate(ascentRate);
-		prediction.setDescentRate(descentRate);
-		prediction.setLaunchAltitude(launchAltitude);
 		
 		// Create the service that gathers aprs packets
 		// TODO: we're not creating this service multiple times, are we?
@@ -340,9 +325,10 @@ public class TheMapActivity extends MapActivity
 	@Override
 	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 		if (requestCode == SETTINGS_CODE) {
-			if (resultCode == SettingsActivity.RESULT_RELOAD) {
-				aprsServiceBinder.reload();
-			}
+			// Should be invoked by means of OnPreferenceChangeListener, that way
+			// the service gets to reload its settings even if the settings activity
+			// was launched from the status bar.
+			// aprsServiceBinder.getService().reload();
 		}
 	}
 	

@@ -5,18 +5,24 @@
 
     <!-- Menu labels -->
     <string name="menu_settings">Settings</string>
-    <string name="menu_monitor">Monitor</string>
+    <string name="menu_monitor">Packet monitor</string>
+    <string name="menu_navigate_to_landing">Navigate to landing</string>
+	<string name="menu_pan_to_balloon">Pan to balloon</string>
+	<string name="menu_flight_panel">Flight panel</string>
     <string name="menu_more">More...</string>
 
 	<!-- Preference items -->
     <string name="pref_cat_aprs">APRS</string>
-    <string name="pref_title_simulation">Simulation</string>
-    <string name="pref_summary_simulation">Replay a past flight</string>
+    <string name="pref_title_connect">Connect</string>
+    <string name="pref_summary_connect">Get data from the APRS network</string>
     <string name="pref_title_callsign">Callsign</string>
     <string name="pref_title_aprslog_server">APRS-Log server</string>
     <string name="pref_summary_callsign">Callsign-SSID to be tracked</string>
     <string name="pref_title_clean_database">Clear packets log</string>
     <string name="pref_summary_clean_database">Click before a new flight</string>
+    <string name="pref_title_launch_time">Launch date/time</string>
+	<string name="pref_summary_launch_time">Only watch packets after this date/time</string>
+    <string name="pref_title_poll_interval">APRS poll interval</string>
     <string name="pref_cat_flight">Flight info</string>
     <string name="pref_title_units">Unit system</string>
     <string name="pref_title_ascent_rate">Ascent rate</string>
@@ -40,10 +46,13 @@
 	<string name="menu_predict_from_here">Predict from here</string>
 	<string name="menu_navigate_here">Navigate here</string>
 	<string name="menu_google_map_this">Google map this</string>
-	<string name="menu_navigate_to_landing">Navigate to landing</string>
 	<string name="text_noaa_model">-- Select prediction model</string>
 	<string name="text_noaa_forecast_cycle">-- Select forecast cycle</string>
 	<string name="text_noaa_launch_time">-- Select launch time</string>
 	<string name="text_noaa_captcha">Answer the Turing Test below:</string>
+	
+	<!--  Notification messages -->
+	<string name="notification_running">Payload is running</string>
+	<string name="notificacion_configure">Touch here to configure</string>
 	
 </resources>

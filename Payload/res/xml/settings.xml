@@ -11,20 +11,33 @@
 			android:inputType="textCapCharacters" 
 			android:defaultValue="MYCALL-11" />
 
-		<CheckBoxPreference
-			android:key="simulation"
-            android:title="@string/pref_title_simulation"
-            android:summary="@string/pref_summary_simulation" />
-		
 		<EditTextPreference
 			android:key="aprslog_server"
 			android:title="@string/pref_title_aprslog_server"
 			android:defaultValue="aprs.trackuino.org:8000" />
+
+		<ListPreference
+			android:key="poll_interval"
+			android:title="@string/pref_title_poll_interval"
+			android:entries="@array/pref_pollintervals"
+			android:entryValues="@array/pref_pollinterval_values"
+			android:defaultValue="30" />
 			
-		<Preference
+		<CheckBoxPreference
+			android:key="connect"
+            android:title="@string/pref_title_connect"
+            android:summary="@string/pref_summary_connect" />
+		
+		<!-- <Preference
 			android:key="clean_database"
 			android:title="@string/pref_title_clean_database"
-			android:summary="@string/pref_summary_clean_database" />
+			android:summary="@string/pref_summary_clean_database" />  -->
+			
+		<org.trackuino.Payload.DateTimePreference
+			android:dialogLayout="@layout/datetime_preference"
+			android:key="launch_time"
+			android:title="@string/pref_title_launch_time"
+			android:summary="@string/pref_summary_launch_time" />
 
     </PreferenceCategory>
     
@@ -67,6 +80,7 @@
     		
     </PreferenceCategory>
     
+    <!-- 
     <PreferenceCategory android:title="@string/pref_cat_other">
    		<Preference
 			android:key="reset_defaults"
@@ -74,4 +88,5 @@
 			android:summary="This doesn't do anything yet"/>
     
     </PreferenceCategory>
+     -->
 </PreferenceScreen>
