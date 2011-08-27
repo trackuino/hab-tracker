@@ -40,12 +40,14 @@
 	    	android:id="@+id/text_noaa_captcha" 
 	    	android:layout_width="wrap_content" 
 	    	android:layout_height="wrap_content"
+	    	android:layout_marginBottom="10dip"
 	    />
 	    	
 	    <ImageView 
 	    	android:id="@+id/image_noaa_captcha" 
 	    	android:layout_width="wrap_content" 
 	    	android:layout_height="wrap_content"
+	    	android:layout_marginBottom="10dip"
 	    />
 	    
 	    <EditText 
@@ -54,7 +56,17 @@
 	    	android:layout_height="wrap_content"
 	    	android:imeOptions="actionGo"
 	    	android:singleLine="true" 
+	    	android:layout_marginBottom="10dip"
 	   	/>
+	   	
+	    <Button 
+	        android:id="@+id/button_noaa_get_sounding"
+	        android:layout_width="fill_parent"
+	        android:layout_height="wrap_content"
+	        android:layout_marginBottom="10dip"
+	        android:text="@string/text_noaa_get_sounding"
+	    />
+	   		
 	
 		<TextView 
 			android:id="@+id/text_noaa_debug"

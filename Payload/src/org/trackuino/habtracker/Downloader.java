@@ -10,6 +10,7 @@ import java.net.URISyntaxException;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.apache.http.HttpConnection;
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
 import org.apache.http.HttpStatus;
@@ -20,6 +21,9 @@ import org.apache.http.client.entity.UrlEncodedFormEntity;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.client.methods.HttpPost;
 import org.apache.http.impl.client.DefaultHttpClient;
+import org.apache.http.params.BasicHttpParams;
+import org.apache.http.params.HttpConnectionParams;
+import org.apache.http.params.HttpParams;
 
 import com.google.android.maps.GeoPoint;
 
@@ -35,7 +39,12 @@ public class Downloader {
 	
     public boolean get(String url) throws IOException {
     	this.url = url;
-		client = new DefaultHttpClient();
+
+		HttpParams httpParams = new BasicHttpParams();
+		HttpConnectionParams.setConnectionTimeout(httpParams, 5000);
+		HttpConnectionParams.setSoTimeout(httpParams, 10000);
+
+    	client = new DefaultHttpClient(httpParams);
 		HttpGet request = new HttpGet(url);
 		response = client.execute(request);
 	    final int statusCode = response.getStatusLine().getStatusCode();
@@ -53,7 +62,12 @@ public class Downloader {
 	    // nameValuePairs.add(new BasicNameValuePair("stringdata", "AndDev is Cool!"));
 
 		this.url = url;
-		client = new DefaultHttpClient();
+
+		HttpParams httpParams = new BasicHttpParams();
+		HttpConnectionParams.setConnectionTimeout(httpParams, 5000);
+		HttpConnectionParams.setSoTimeout(httpParams, 10000);
+
+		client = new DefaultHttpClient(httpParams);
 	    HttpPost request = new HttpPost(url);
         request.setEntity(new UrlEncodedFormEntity(params));
         response = client.execute(request);

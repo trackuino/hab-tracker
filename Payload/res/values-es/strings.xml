@@ -53,6 +53,7 @@
 	<string name="text_noaa_forecast_cycle">Ciclo de predicción</string>
 	<string name="text_noaa_launch_time">Hora de lanzamiento</string>
 	<string name="text_noaa_captcha">Resuelve el test de Turing</string>
+	<string name="text_noaa_get_sounding">Descargar sondeo</string>
 	<string name="text_noaa_connection_error">Error de conexión</string>
 
 	<!--  Notification messages -->

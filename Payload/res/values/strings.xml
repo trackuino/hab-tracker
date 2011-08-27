@@ -53,6 +53,7 @@
 	<string name="text_noaa_forecast_cycle">Select forecast cycle</string>
 	<string name="text_noaa_launch_time">Select launch time</string>
 	<string name="text_noaa_captcha">Answer the Turing Test below:</string>
+	<string name="text_noaa_get_sounding">Get sounding</string>
 	<string name="text_noaa_connection_error">Connection error</string>
 	
 	<!--  Notification messages -->

@@ -37,6 +37,7 @@ public class NoaaActivity extends Activity {
 	TextView captchaText;
 	EditText captchaEdit;
 	TextView debugText;
+	Button getSoundingButton;
 	GeoPoint point;
 	NoaaScraper scraper = new NoaaScraper();
 	
@@ -67,6 +68,7 @@ public class NoaaActivity extends Activity {
         captchaImage = (ImageView) findViewById(R.id.image_noaa_captcha);
         captchaText = (TextView) findViewById(R.id.text_noaa_captcha);
         captchaEdit = (EditText) findViewById(R.id.edit_noaa_captcha);
+        getSoundingButton = (Button) findViewById(R.id.button_noaa_get_sounding);
         debugText = (TextView) findViewById(R.id.text_noaa_debug);
         
     	// Hide everything except what matters now
@@ -76,6 +78,7 @@ public class NoaaActivity extends Activity {
         captchaImage.setVisibility(View.GONE);
         captchaText.setVisibility(View.GONE);
         captchaEdit.setVisibility(View.GONE);
+        getSoundingButton.setVisibility(View.GONE);
 
         step1SelectModel();
     }
@@ -221,16 +224,17 @@ public class NoaaActivity extends Activity {
 		
 	}
 
-	private void step3LaunchTimeSelected(int launchTimePlus1) {
+	private void step3LaunchTimeSelected(int launchTime) {
 		launchTimeButton.setEnabled(false);
 		captchaText.setVisibility(View.VISIBLE);
 		captchaImage.setVisibility(View.VISIBLE);
 		captchaEdit.setVisibility(View.VISIBLE);
-        step4EnterCaptcha(launchTimePlus1);
+        getSoundingButton.setVisibility(View.VISIBLE);
+        step4EnterCaptcha(launchTime);
 	}
 
 
-	private void step4EnterCaptcha(final int launchTimePlus1) {
+	private void step4EnterCaptcha(final int launchTime) {
 		setProgressBarIndeterminateVisibility(true);
 
 		try {
@@ -244,6 +248,16 @@ public class NoaaActivity extends Activity {
 		}
 		setProgressBarIndeterminateVisibility(false);
 		
+		// Clicked on "Get sounding" button. We need this button because the HTC Sense IME
+		// keyboard doesn't honor the "actionGo" property and doesn't show the "Go" key at all.
+		getSoundingButton.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				step4CaptchaEntered(launchTime, captchaEdit.getText().toString());
+			}
+		});
+		
 		captchaEdit.setOnEditorActionListener(new OnEditorActionListener() {
 			
 			@Override
@@ -252,17 +266,17 @@ public class NoaaActivity extends Activity {
 					InputMethodManager imm = (InputMethodManager) getSystemService(
 						    INPUT_METHOD_SERVICE);
 					imm.hideSoftInputFromWindow(captchaEdit.getWindowToken(), 0);
-					step4CaptchaEntered(launchTimePlus1, v.getText().toString());
+					step4CaptchaEntered(launchTime, v.getText().toString());
 				}
 				return true;
 			}
 		});
 	}
 
-	private void step4CaptchaEntered(int launchTimePlus1, String captcha) {
+	private void step4CaptchaEntered(int launchTime, String captcha) {
 		LinkedList<Wind> sounding;
 		try {
-			sounding = scraper.fetchSounding(launchTimePlus1, captcha);
+			sounding = scraper.fetchSounding(launchTime, captcha);
 			debugText.setText(scraper.getBody());
 			saveSounding(sounding);
 			if (sounding.size() > 0) {
