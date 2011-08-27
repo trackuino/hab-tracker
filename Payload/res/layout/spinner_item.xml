@@ -2,9 +2,9 @@
 
 <TextView xmlns:android="http://schemas.android.com/apk/res/android" 
     android:id="@android:id/text1"
-    style="?android:attr/spinnerItemStyle"
-    android:singleLine="true"
+    style="?android:attr/spinnerDropDownItemStyle"
     android:layout_width="fill_parent"
-    android:layout_height="wrap_content"
-    android:ellipsize="end" 
+    android:layout_height="?android:attr/listPreferredItemHeight"
+    android:ellipsize="end"
+    
 />

@@ -3,7 +3,6 @@
   xmlns:android="http://schemas.android.com/apk/res/android">
 	  
 	<PreferenceCategory android:title="@string/pref_cat_aprs">
-		<!-- TODO: everything here needs default values  -->
 
 		<EditTextPreference
 			android:key="callsign"
@@ -22,23 +21,23 @@
 			android:entries="@array/pref_pollintervals"
 			android:entryValues="@array/pref_pollinterval_values"
 			android:defaultValue="30" />
-			
-		<CheckBoxPreference
-			android:key="connect"
-            android:title="@string/pref_title_connect"
-            android:summary="@string/pref_summary_connect" />
-		
+
 		<!-- <Preference
 			android:key="clean_database"
 			android:title="@string/pref_title_clean_database"
 			android:summary="@string/pref_summary_clean_database" />  -->
 			
-		<org.trackuino.Payload.DateTimePreference
+		<org.trackuino.habtracker.DateTimePreference
 			android:dialogLayout="@layout/datetime_preference"
 			android:key="launch_time"
 			android:title="@string/pref_title_launch_time"
 			android:summary="@string/pref_summary_launch_time" />
 
+		<CheckBoxPreference
+			android:key="connect"
+            android:title="@string/pref_title_connect"
+            android:summary="@string/pref_summary_connect" />
+			
     </PreferenceCategory>
     
     <PreferenceCategory android:title="@string/pref_cat_flight">

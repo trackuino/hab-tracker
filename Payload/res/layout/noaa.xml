@@ -9,28 +9,30 @@
 	    android:layout_width="fill_parent"
 	    android:layout_height="wrap_content">
 	
-	    <Spinner 
-	        android:id="@+id/spinner_noaa_model"
+	    <Button 
+	        android:id="@+id/button_noaa_model"
 	        android:layout_width="fill_parent"
 	        android:layout_height="wrap_content"
-	        android:drawSelectorOnTop="true"
 	        android:layout_marginBottom="10dip"
+	        android:text="@string/text_noaa_model"
 	    />
 	
-	    <Spinner 
-	        android:id="@+id/spinner_noaa_forecast_cycle"
+	    <Button 
+	        android:id="@+id/button_noaa_forecast_cycle"
 	        android:layout_width="fill_parent"
 	        android:layout_height="wrap_content"
 	        android:drawSelectorOnTop="true"
 	        android:layout_marginBottom="10dip"
+	        android:text="@string/text_noaa_forecast_cycle"
 	    />
 	    
-	    <Spinner
-	    	android:id="@+id/spinner_noaa_launch_time"
+	    <Button
+	    	android:id="@+id/button_noaa_launch_time"
 	        android:layout_width="fill_parent"
 	        android:layout_height="wrap_content"
 	        android:drawSelectorOnTop="true"
 	        android:layout_marginBottom="10dip"
+	        android:text="@string/text_noaa_launch_time"
 	    />
 	    
 	    <TextView 

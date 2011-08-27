@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="hello">Hello World, PayloadActivity!</string>
-    <string name="app_name">Payload</string>
+    <string name="app_name">HAB Tracker</string>
 
     <!-- Menu labels -->
     <string name="menu_settings">Configuración</string>
@@ -23,7 +22,6 @@
     <string name="pref_title_launch_time">Fecha/hora de lanzamiento</string>
 	<string name="pref_summary_launch_time">Monitoriza sólo paquetes posteriores a esta fecha</string>
     <string name="pref_title_poll_interval">Intervalo conexiones APRS</string>
-    
     <string name="pref_cat_flight">Datos del vuelo</string>
     <string name="pref_title_units">Unidades</string>
     <string name="pref_title_ascent_rate">Velocidad ascenso</string>
@@ -43,18 +41,24 @@
 	<string name="monitor_activity">Monitor de Packet</string>
 	<string name="browser_activity">Vientos</string>
 	<string name="noaa_activity">Descargar sondeo de NOAA</string>
+	
+	<!--  Context menus -->
 	<string name="menu_get_sounding_winds">Descargar sondeo</string>
 	<string name="menu_predict_from_here">Predicción desde aquí</string>
 	<string name="menu_navigate_here">Indicaciones hasta aquí</string>
 	<string name="menu_google_map_this">Mapa de Google</string>
 	
-	<string name="text_noaa_model">-- Modelo de predicción</string>
-	<string name="text_noaa_forecast_cycle">-- Ciclo de predicción</string>
-	<string name="text_noaa_launch_time">-- Hora de lanzamiento</string>
+	<!--  NOAA activity texts -->	
+	<string name="text_noaa_model">Modelo de predicción</string>
+	<string name="text_noaa_forecast_cycle">Ciclo de predicción</string>
+	<string name="text_noaa_launch_time">Hora de lanzamiento</string>
 	<string name="text_noaa_captcha">Resuelve el test de Turing</string>
+	<string name="text_noaa_connection_error">Error de conexión</string>
 
 	<!--  Notification messages -->
-	<string name="notification_running">Payload conectado</string>
-	<string name="notificacion_configure">Toca aquí para configurar</string>
+	<string name="notification_running">Payload conectado - Toca para configurar</string>
+	<string name="notification_waiting">Esperando datos APRS</string>
+	<string name="notification_last_packet">Último paquete:</string>
+	<string name="notification_error">Error:</string>
 	
 </resources>

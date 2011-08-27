@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="hello">Hello World, PayloadActivity!</string>
-    <string name="app_name">Payload</string>
+    <string name="app_name">HAB Tracker</string>
 
     <!-- Menu labels -->
     <string name="menu_settings">Settings</string>
@@ -42,17 +41,24 @@
 	<string name="monitor_activity">Packet Monitor</string>
 	<string name="browser_activity">Winds browser</string>
 	<string name="noaa_activity">Get NOAA sounding winds</string>
+
+	<!--  Context menus -->
 	<string name="menu_get_sounding_winds">Get sounding winds</string>
 	<string name="menu_predict_from_here">Predict from here</string>
 	<string name="menu_navigate_here">Navigate here</string>
 	<string name="menu_google_map_this">Google map this</string>
-	<string name="text_noaa_model">-- Select prediction model</string>
-	<string name="text_noaa_forecast_cycle">-- Select forecast cycle</string>
-	<string name="text_noaa_launch_time">-- Select launch time</string>
+	
+	<!--  NOAA activity texts -->	
+	<string name="text_noaa_model">Select prediction model</string>
+	<string name="text_noaa_forecast_cycle">Select forecast cycle</string>
+	<string name="text_noaa_launch_time">Select launch time</string>
 	<string name="text_noaa_captcha">Answer the Turing Test below:</string>
+	<string name="text_noaa_connection_error">Connection error</string>
 	
 	<!--  Notification messages -->
-	<string name="notification_running">Payload is running</string>
-	<string name="notificacion_configure">Touch here to configure</string>
+	<string name="notification_running">Payload is running - Touch to configure</string>
+	<string name="notification_waiting">Waiting for APRS data</string>
+	<string name="notification_last_packet">Last packet:</string>
+	<string name="notification_error">Error:</string>
 	
 </resources>

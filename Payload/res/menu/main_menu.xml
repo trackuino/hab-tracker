@@ -4,8 +4,9 @@
 <item android:id="@+id/settings" android:icon="@drawable/ic_menu_settings" android:title="@string/menu_settings"></item>
 <item android:id="@+id/monitor" android:icon="@drawable/ic_menu_info_details" android:title="@string/menu_monitor"></item>
 <item android:id="@+id/navigate_to_landing" android:icon="@drawable/ic_menu_directions" android:title="@string/menu_navigate_to_landing"></item>
+<!-- TODO: 
 <item android:id="@+id/pan_to_balloon" android:icon="@drawable/ic_menu_goto" android:title="@string/menu_pan_to_balloon"></item>
 <item android:id="@+id/flight_panel" android:icon="@drawable/ic_menu_view" android:title="@string/menu_flight_panel"></item>
 <item android:id="@+id/more" android:icon="@drawable/ic_menu_more" android:title="@string/menu_more"></item>
-
+ -->
 </menu>

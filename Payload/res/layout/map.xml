@@ -2,10 +2,9 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:layout_width="fill_parent"
-    android:layout_height="fill_parent"
-    >
+    android:layout_height="fill_parent">
 
-	<org.trackuino.Payload.MapViewWithGestures 
+	<org.trackuino.habtracker.MapViewWithGestures 
 	        android:id="@+id/mapView"
 	        android:layout_width="fill_parent"
 	        android:layout_height="fill_parent"
@@ -13,10 +12,10 @@
 	        android:clickable="true"
 	        android:apiKey="07SJb7GO86bUGYGSNGrV0q_Bxczk_v1_siN6ofw"
 	        />
-
+	<!-- 
     <SeekBar 
     	android:layout_height="wrap_content" 
     	android:id="@+id/seekBar" 
     	android:layout_width="fill_parent" />
-
+ 	-->
 </LinearLayout>

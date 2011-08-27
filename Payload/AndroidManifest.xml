@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-      package="org.trackuino.Payload"
+      package="org.trackuino.habtracker"
       android:versionCode="1"
       android:versionName="1.0">
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"></uses-permission>
@@ -21,13 +21,13 @@
         <activity android:name="SettingsActivity" android:label="@string/settings_activity" />
         <activity android:name="MonitorActivity" android:label="@string/monitor_activity" />
         <activity android:name="BrowserActivity" android:label="@string/browser_activity" />
-        <activity android:name="NoaaActivity" 
+        <activity android:name="org.trackuino.habtracker.NoaaActivity" 
         	android:label="@string/noaa_activity" 
         	android:windowSoftInputMode="adjustPan" />
         
-        <service android:name="AprsService" />
+        <service android:name="org.trackuino.habtracker.AprsService" />
 
-		<provider android:name="PayloadContentProvider" android:authorities="org.trackuino.payload" />
+		<provider android:name=".HabContentProvider" android:authorities="org.trackuino.habtracker" />
         
     </application>
     
