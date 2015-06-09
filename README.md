@@ -16,4 +16,4 @@ To use the real-time monitor and prediction feature you need an [APRS-DB](https:
 
 ## Building ##
 
-The repository includes an Eclipse project you can import into your workspace.
+The repository includes an Eclipse project you can import into your workspace. Look into the Payload/bin folder for a precompiled APK.
